@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    background-color: #1e2d24;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .top-bar {
+    background-color: #f0a639;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .main-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+
+    flex-wrap: nowrap;
+  }
+  
+  .brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .search-field {
+    flex: 1; 
+    max-width: 800px; 
+    margin: 0 20px;
+    border-radius: 25px; 
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  
+  input[matInput] {
+    font-size: 16px;
+    padding: 12px 15px ;
+    border-radius: 16px;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 120%;
+    max-width: 2000px;
+  }
+  
+  .icons {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: space-around; 
+    gap: 17px; 
+    padding-bottom: 20px;
+    flex-wrap: nowrap;
+  }
+
+  .icons button {
+    display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  color: white; 
+  text-decoration: none; 
+  }
+  
+  .icon {
+    font-size: 24px;
+  }
+  
+  .icon-text {
+    font-size: 16px; 
+  color: white; 
+  font-weight: 400;
+  margin-top: 22px;
+  }
+
+  .icons ion-icon {
+    font-size: 36px; 
+  color: white; 
+  margin-bottom: 8px; 
+  }
+  .cart-count {
+    background-color: #ff6f00; 
+  color: white; 
+  border-radius: 50%; 
+  padding: 3px 8px; 
+  font-size: 14px; 
+  position: absolute; 
+  top: -12px; 
+  right: -12px;
+  }
+  
+  .divider {
+    border: none;
+    border-top: 1px solid white;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .menu-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+    color: white;
+    padding: 10px 0;
+  }
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #1dad52; 
+    color: white; 
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-decoration: none; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.1); 
+  }
+  
+  
+
+.mat-mdc-button:not(:disabled) {
+    color: #FFA500; 
+    font-family: 'Poppins', sans-serif; 
+    font-weight: bold; 
+  }
+  
+
+  .mat-mdc-button:not(:disabled):hover {
+    color: #FF8C00; 
+  }
+  
+  .i{
+    margin-top: 10px;
+    text-align: start;
+  }
+
+  /* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .main-bar {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .search-field {
+      max-width: 100%; /* Ocupa todo el ancho disponible en móviles */
+      margin: 10px 0; /* Espacio vertical en móviles */
+    }
+  
+    .icons {
+      justify-content: center;
+      gap: 20px; /* Reduce el espacio entre iconos en móviles */
+    }
+  
+    .icon-text {
+      font-size: 14px; /* Reduce el tamaño de texto en móviles */
+    }
+  }
