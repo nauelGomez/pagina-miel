@@ -1,0 +1,29 @@
+/* Asegura que el contenedor de la imagen tenga un tamaño fijo */
+.relative {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .relative img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que se recorte y mantenga las proporciones */
+  }
+  .card {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    padding: 16px; /* Espacio interno */
+}
+
+.p-carousel .p-carousel-item {
+    background-color: #ffffff; /* Fondo blanco para cada elemento */
+    border: 1px solid #ddd; /* Borde ligero */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    margin: 10px; /* Espacio alrededor del elemento */
+}

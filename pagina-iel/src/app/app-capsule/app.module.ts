@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppComponent } from '../app.component';
 import { MatInputModule } from '@angular/material/input';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { MatInputModule } from '@angular/material/input';
     BrowserModule,
     MatToolbarModule,
     MatButtonModule,
-    AppComponent 
+    AppComponent,
+    CommonModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
