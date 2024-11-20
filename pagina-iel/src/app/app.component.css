@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Esto ayuda a evitar el desplazamiento horizontal */
+}
+
 .slider{
 
   width: 100vw; /* Ocupa todo el ancho de la ventana */
