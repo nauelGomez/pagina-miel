@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from '../services/product.interface'; 
 import { ProductService } from '../services/product.service';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 
+import { MatIcon } from '@angular/material/icon';
+
 @Component({
   selector: 'app-carousel-products',
   standalone: true,
-  imports: [CarouselModule, ButtonModule, TagModule],
+  imports: [CarouselModule, ButtonModule, TagModule, MatIcon],
   providers: [ProductService],
   templateUrl: './carousel-products.component.html',
   styleUrl: './carousel-products.component.css'
@@ -18,6 +20,8 @@ export class CarouselProductsComponent implements OnInit, Product {
   products: Product[] = [];
 
   responsiveOptions: any[] | undefined;
+carousel: any;
+ 
   
   constructor(private productService: ProductService) {}
   id: number = 0;
@@ -28,25 +32,27 @@ export class CarouselProductsComponent implements OnInit, Product {
   category?: string | undefined;
   isAvailable?: string;
 
+
+
   ngOnInit() {
     // Datos de prueba
     this.responsiveOptions = [
       {
         breakpoint: '1024px',
         numVisible: 3,
-        numScroll: 1
+        numScroll: 1,
       },
       {
         breakpoint: '768px',
         numVisible: 2,
-        numScroll: 1
+        numScroll: 1,
       },
       {
         breakpoint: '560px',
         numVisible: 1,
-        numScroll: 1
-      }
-  ];
+        numScroll: 1,
+      },
+    ];
     this.products = [
       {
         id: 1,
@@ -92,6 +98,10 @@ export class CarouselProductsComponent implements OnInit, Product {
     ];
   }
 
+  canNavigateBackward(carousel: any): boolean {
+    return carousel.page > 0; // Verifica si hay páginas anteriores
+  }
+  
   getSeverity(status: string): "success" | "warning" | "danger" | undefined {
     switch (status) {
       case 'INSTOCK':
@@ -104,5 +114,5 @@ export class CarouselProductsComponent implements OnInit, Product {
         return undefined; // O cualquier valor por defecto que prefieras
     }
   }
-  
+
 }

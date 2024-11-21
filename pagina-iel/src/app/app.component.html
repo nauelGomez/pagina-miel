@@ -11,8 +11,8 @@
     <div class="row">
       <div class="col-md-8 offset-md-2">
         <h2 class="h1 js-welcome-message-title">Frutos secos seleccionados</h2>
-        <p class="js-welcome-message-text">El secreto de nuestras pastas es secreto, no te lo vamos a decir melmanito.
-          No usamos ingredientes que no sean necesarios.</p>
+        <p class="js-welcome-message-text">Las recetas de nuestras pastas son un arte bien guardado, una combinación perfecta de lo esencial y lo exquisito. 
+          Aquí no agregamos nada que no sea absolutamente necesario, porque lo simple también puede ser extraordinario.</p>
       </div>
     </div>
   </div>
@@ -20,21 +20,30 @@
 <app-carousel-products></app-carousel-products>
 <section class="informative-banner">
   <div class="service-item">
-    <div>
-      <ion-icon name="airplane-outline"></ion-icon>
-      <h4>Envíos rápidos a todo el país</h4>
-      <p>Compra ahora y recibe en 48 horas.</p>
+    <div class="service">
+      <ion-icon name="airplane-outline" class="icon"></ion-icon>
+      <div class="service-text">
+        <h4>Envíos rápidos</h4>
+        <p>Recibe en 48 horas.</p>
+      </div>
     </div>
-    <div>
-      <ion-icon name="alarm-outline"></ion-icon>
-      <h4>Soporte 24/7</h4>
-      <p>Estamos aquí para ayudarte.</p>
+    <div class="divider"></div>
+    <div class="service">
+      <ion-icon name="alarm-outline" class="icon"></ion-icon>
+      <div class="service-text">
+        <h4>Soporte 24/7</h4>
+        <p>Siempre contigo.</p>
+      </div>
     </div>
-    <div>
-      <ion-icon name="car-sport-outline"></ion-icon>
-      <h4>Desde $40.000</h4>
-      <p>Envío gratis en compras superiores.</p>
+    <div class="divider"></div>
+    <div class="service">
+      <ion-icon name="car-sport-outline" class="icon"></ion-icon>
+      <div class="service-text">
+        <h4>Envío gratis</h4>
+        <p>Desde $40.000.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<app-footer></app-footer>

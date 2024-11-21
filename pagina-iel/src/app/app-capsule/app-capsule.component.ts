@@ -16,9 +16,11 @@ import { CommonModule } from '@angular/common';
 })
 export class AppCapsuleComponent implements OnInit {
   constructor(private renderer: Renderer2) {}
-
+  cartCount: number = 0;
   ngOnInit(): void {}
-
+  addToCart(): void {
+    this.cartCount++;
+  }
   @HostListener('window:scroll', [])
   onScroll(): void {
     const scrollPosition = window.pageYOffset;

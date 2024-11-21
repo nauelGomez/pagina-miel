@@ -29,10 +29,11 @@
         </i>
       </button>
       <button mat-icon-button>
-        <i>
-        <ion-icon name="cart-outline"></ion-icon>
-        <span class="icon-text">Carrito</span>
-      </i>
+        <i class="cart-button">
+          <ion-icon name="cart-outline"></ion-icon>
+          <span class="icon-text">Carrito</span>
+          <span class="cart-counter" *ngIf="cartCount >= 0">{{ cartCount }}</span>
+        </i>
       </button>
     </div>
   </div>
@@ -41,12 +42,15 @@
 
 <mat-toolbar color="primary" class="navbar">
   <div class="menu-items">
-    <button mat-button>Pastas untables</button>
-    <button mat-button>La Pehuajo</button>
-    <button mat-button>Recetas</button>
+    <button mat-button>Inicio</button>
+    <button mat-button>Producto</button>
+    <button mat-button>Contacto</button>
     <button mat-button>Quiénes somos</button>
   </div>
 </mat-toolbar>
+
+
+
 <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
   <ion-icon name="logo-whatsapp"></ion-icon>
 </a>
