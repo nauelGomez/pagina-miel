@@ -11,7 +11,7 @@ html, body {
 
 .slider{
 
-  width: 100vw; /* Ocupa todo el ancho de la ventana */
+  width: 100%; /* Ocupa todo el ancho de la ventana */
   height: 65vh;
     position: relative;
     display: flex;
@@ -154,3 +154,5 @@ html, body {
   .service-item{
     background-color: #dcbb7e;
   }
+
+ 

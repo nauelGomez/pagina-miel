@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Product } from '../services/product.interface'; 
 import { ProductService } from '../services/product.service';
 import { CarouselModule } from 'primeng/carousel';
@@ -20,8 +20,9 @@ export class CarouselProductsComponent implements OnInit, Product {
   products: Product[] = [];
 
   responsiveOptions: any[] | undefined;
-carousel: any;
+  carousel: any;
  
+  @Output() productAdded = new EventEmitter<Product>();
   
   constructor(private productService: ProductService) {}
   id: number = 0;
@@ -32,6 +33,10 @@ carousel: any;
   category?: string | undefined;
   isAvailable?: string;
 
+  addProductToCart(product: Product): void {
+    
+    this.productAdded.emit(product);
+  }
 
 
   ngOnInit() {
@@ -60,7 +65,8 @@ carousel: any;
         description: 'Descripción del producto de prueba 1',
         price: 100,
         imageUrl: 'https://carrefourar.vtexassets.com/arquivos/ids/197068/7793323004482_02.jpg?v=637523691233030000',
-        isAvailable: 'si disponible'
+        isAvailable: 'si disponible',
+        category: 'Pastas'
       },
       {
         id: 2,
@@ -68,7 +74,8 @@ carousel: any;
         description: 'Descripción del producto de prueba 2',
         price: 200,
         imageUrl: 'https://acdn.mitiendanube.com/stores/002/133/760/products/69b38041-330b-4bc3-8527-2ebdd9d3c2d1-9a61b507b31db1191a16600528361378-640-0.jpeg',
-        isAvailable: 'no disponible'
+        isAvailable: 'no disponible',
+        category: 'Mieles'
       },
       {
         id: 3,
@@ -76,7 +83,8 @@ carousel: any;
         description: 'Descripción del producto de prueba 3',
         price: 200,
         imageUrl: 'https://acdn.mitiendanube.com/stores/002/133/760/products/69b38041-330b-4bc3-8527-2ebdd9d3c2d1-9a61b507b31db1191a16600528361378-640-0.jpeg',
-        isAvailable: 'no disponible'
+        isAvailable: 'no disponible',
+        category: 'Mieles'
       },
       {
         id: 4,
@@ -84,20 +92,14 @@ carousel: any;
         description: 'Descripción del producto de prueba 4',
         price: 200,
         imageUrl: 'https://acdn.mitiendanube.com/stores/002/133/760/products/69b38041-330b-4bc3-8527-2ebdd9d3c2d1-9a61b507b31db1191a16600528361378-640-0.jpeg',
-        isAvailable: 'no disponible'
-      },   
-      {
-        id: 6,
-        name: 'Producto de prueba 6',
-        description: 'Descripción del producto de prueba 6',
-        price: 200,
-        imageUrl: 'https://acdn.mitiendanube.com/stores/002/133/760/products/69b38041-330b-4bc3-8527-2ebdd9d3c2d1-9a61b507b31db1191a16600528361378-640-0.jpeg',
-        isAvailable: 'no disponible'
-      },
-      // Agrega más productos de prueba si es necesario
+        isAvailable: 'no disponible',
+        category: 'Frutos secos'
+      }
     ];
+    
   }
 
+  
   canNavigateBackward(carousel: any): boolean {
     return carousel.page > 0; // Verifica si hay páginas anteriores
   }
