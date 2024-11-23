@@ -1,17 +1,37 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product.interface';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  constructor() {}
+  private cartItemsSubject = new BehaviorSubject<Product[]>([]);
+  cartItems$ = this.cartItemsSubject.asObservable();
 
+  private cartCountSubject = new BehaviorSubject<number>(0);
+  cartCount$ = this.cartCountSubject.asObservable();
 
-  getProductsSmall(): Promise<Product[]> {
-    return Promise.resolve([
-      { id: 1, name: 'Producto 1', description: 'Descripción del producto 1', price: 100, imageUrl: 'https://carrefourar.vtexassets.com/arquivos/ids/197068/7793323004482_02.jpg?v=637523691233030000' },
-      { id: 2, name: 'Producto 2', description: 'Descripción del producto 2', price: 200, imageUrl: 'https://media.istockphoto.com/id/185068940/es/foto/miel-frasco-sobre-un-fondo-blanco.jpg?s=612x612&w=0&k=20&c=aS6jaTI8MiczU8BnphVi0HxcTJNcH2PwSFi8293jzRQ=' },
-    ]);
+  addToCart(product: Product): void {
+    const currentItems = this.cartItemsSubject.getValue();
+
+  // Asegúrate de que la cantidad siempre está definida
+  const existingProduct = currentItems.find((item) => item.id === product.id);
+
+  if (existingProduct) {
+    existingProduct.quantity = (existingProduct.quantity || 0) + 1;
+  } else {
+    currentItems.push({ ...product, quantity: 1 });
+  }
+
+  this.cartItemsSubject.next([...currentItems]);
+  this.updateCartCount();
+  }
+
+  updateCartCount(): void {
+    const totalCount = this.cartItemsSubject
+      .getValue()
+      .reduce((count, item) => count + (item.quantity || 0), 0);
+    this.cartCountSubject.next(totalCount);
   }
 }

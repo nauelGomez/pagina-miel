@@ -65,7 +65,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of cartItems">
+        <tr *ngFor="let item of cartItems; let i = index" [class.fade-out]="item.removing">
           <td class="product-details">
             <img [src]="item.imageUrl" [alt]="item.name" class="product-image" />
             <div class="product-info">
@@ -73,7 +73,6 @@
               <p>{{ item.description }}</p>
               <p class="price">Precio: {{ '$' + item.price }}</p>
             </div>
-            
             <div class="quantity-controls">
               <button mat-icon-button (click)="decreaseQuantity(item)">
                 <mat-icon>remove</mat-icon>
@@ -87,6 +86,7 @@
           <td class="subtotal">{{ '$' + (item.price * item.quantity) }}</td>
         </tr>
       </tbody>
+      
       
       
     </table>
@@ -133,5 +133,8 @@
 
 
 
-<app-carousel-products (productAdded)="addToCart($event)"></app-carousel-products>
+<app-carousel-products 
+  [products]="cartItems" 
+  (productAdded)="addToCart($event)">
+</app-carousel-products>
 

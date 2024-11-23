@@ -16,6 +16,11 @@ body { margin: 0; }
     box-shadow: none !important;
  }
 
+.mdc-button__label{
+  color: #73302e;
+}
+
+
 
   
   button.p-carousel-next,
@@ -71,7 +76,9 @@ body { margin: 0; }
     display: none !important; /* Oculta completamente el marcador */
   }
   
-
+  .mdc-button__label:hover{
+    color: #73302e;
+  }
   
   /* Ajustes generales para móviles */
   @media (max-width: 768px) {

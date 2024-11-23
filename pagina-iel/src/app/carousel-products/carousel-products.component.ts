@@ -1,10 +1,9 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../services/product.interface'; 
 import { ProductService } from '../services/product.service';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
-
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
@@ -21,7 +20,7 @@ export class CarouselProductsComponent implements OnInit, Product {
 
   responsiveOptions: any[] | undefined;
   carousel: any;
- 
+  @Input() products1: Product[] = []; 
   @Output() productAdded = new EventEmitter<Product>();
   
   constructor(private productService: ProductService) {}
@@ -34,8 +33,7 @@ export class CarouselProductsComponent implements OnInit, Product {
   isAvailable?: string;
 
   addProductToCart(product: Product): void {
-    
-    this.productAdded.emit(product);
+    this.productService.addToCart(product);
   }
 
 
