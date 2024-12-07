@@ -16,7 +16,7 @@ body, html {
 
 .card-container {
   margin: 0px auto; 
-  padding: 20px;
+  padding: 0px;
   background-color: #ffffff;
   border-radius: 0px;
   max-width: 100%; 
@@ -40,11 +40,13 @@ body, html {
 
 .product-card {
   background-color: #ffffff;
-  border: 1px solid #73302ea6;
+  border: 1px groove #dcbb7e;
+  border-radius: 9%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
+  overflow: hidden;
 }
 
 .product-card:hover {

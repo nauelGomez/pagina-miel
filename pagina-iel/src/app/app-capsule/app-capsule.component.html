@@ -1,3 +1,4 @@
+
 <mat-toolbar color="primary" class="navbar">
   <div class="top-bar">
     <span>🚚🚚🚚 ENVIOS GRATIS A TODO EL PAIS! 🚚🚚🚚</span>
@@ -40,7 +41,7 @@
 <mat-toolbar color="primary" class="navbar">
   <div class="menu-items">
     <button mat-button>Inicio</button>
-    <button mat-button>Producto</button>
+    <button mat-button routerLink="/productos">Productos</button>
     <button mat-button>Contacto</button>
     <button mat-button>Quiénes somos</button>
   </div>
@@ -126,8 +127,7 @@
 </div>
 <div class="overlay" *ngIf="isCartOpen" (click)="toggleCart()"></div>
 
- <!-- whatsapp -->
-<a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+ <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
   <ion-icon name="logo-whatsapp"></ion-icon>
 </a>
 

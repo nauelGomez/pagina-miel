@@ -21,7 +21,6 @@ body { margin: 0; }
 }
 
 
-
   
   button.p-carousel-next,
   button.p-carousel-prev {
@@ -90,16 +89,16 @@ body { margin: 0; }
 
   button.p-link {
     font-family: 'Playfair Display', serif;
-    background-color: #fef9f6; /* Fondo claro */
-    color: #73302e; /* Color del texto */
-    border: 1px solid #dcbb7e; /* Borde elegante */
-    border-radius: 25px; /* Bordes redondeados */
+    background-color: #fef9f6; 
+    color: #73302e; 
+    border: 1px solid #dcbb7e; 
+    border-radius: 25px; 
     width: 36px;
     height: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 5px; /* Espaciado entre botones */
+    margin: 0 5px; 
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
     transition: all 0.3s ease; /* Transición para hover y active */
