@@ -7,11 +7,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Product } from '../../services/servicio productos/product.interface';
 import { CarouselProductsComponent } from '../../paginas/carousel-products/carousel-products.component';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-app-capsule',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatFormFieldModule, MatIconModule, CommonModule, FormsModule, CarouselProductsComponent],
+  imports: [MatToolbarModule, MatButtonModule, MatFormFieldModule, MatIconModule, CommonModule, FormsModule, CarouselProductsComponent, RouterLink],
   templateUrl: './app-capsule.component.html',
   styleUrl: './app-capsule.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -19,14 +20,16 @@ import { CarouselProductsComponent } from '../../paginas/carousel-products/carou
 })
 export class AppCapsuleComponent implements OnInit {
   acc: ((previousValue: Product, currentValue: Product, currentIndex: number, array: Product[]) => Product) | undefined;
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2, private router: Router) { }
   cartItems: Array<Product & { quantity: number }> = [];
   isCartOpen: boolean = false;
   cartCount: number = 0;
   cartTotal: number = 0;
   postalCode: string = '';
 
-
+  navigateToProductsEstruct() {
+    this.router.navigate(['paginas/products-estruct']);
+  }
   getProgressPercentage(): number {
     const total = this.calculateTotal();
     return Math.min((total / 1000) * 100, 100);

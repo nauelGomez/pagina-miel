@@ -1,4 +1,4 @@
-<app-app-capsule></app-app-capsule>
+
 <div class="container">
     <div class="header">
       <div class="shipping-options">
@@ -54,6 +54,7 @@
             <h3>{{ product.name }}</h3>
             <p class="price">${{ product.price }}</p>
             <button (click)="addToCart(product)">Agregar al carrito</button>
+            <button [routerLink] = "['/producto-vista']">VER</button>
           </div>
         </div>
       </main>
