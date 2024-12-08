@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Product } from '../services/product.interface'; 
-import { ProductService } from '../services/product.service';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
 import { MatIcon } from '@angular/material/icon';
+import { ProductService } from '../../services/servicio productos/product.service';
+import { Product } from '../../services/servicio productos/product.interface';
 
 @Component({
   selector: 'app-carousel-products',
@@ -38,7 +38,6 @@ export class CarouselProductsComponent implements OnInit, Product {
 
 
   ngOnInit() {
-    // Datos de prueba
     this.responsiveOptions = [
       {
         breakpoint: '1024px',

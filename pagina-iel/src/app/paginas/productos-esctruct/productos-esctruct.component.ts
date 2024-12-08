@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AppCapsuleComponent } from "../app-capsule/app-capsule.component";
+import { AppCapsuleComponent } from '../../estructura/app-capsule/app-capsule.component';
+
 
 
 @Component({

@@ -4,16 +4,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
-import { Product } from '../services/product.interface';
-import { CarouselProductsComponent } from '../carousel-products/carousel-products.component';
 import { FormsModule } from '@angular/forms';
-import { FooterComponent } from "../footer/footer.component";
-import { InicioComponent } from "../inicio/inicio.component";
+import { Product } from '../../services/servicio productos/product.interface';
+import { CarouselProductsComponent } from '../../paginas/carousel-products/carousel-products.component';
 
 @Component({
   selector: 'app-app-capsule',
   standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatFormFieldModule, MatIconModule, CommonModule, CarouselProductsComponent, FormsModule, FooterComponent, InicioComponent],
+  imports: [MatToolbarModule, MatButtonModule, MatFormFieldModule, MatIconModule, CommonModule, FormsModule, CarouselProductsComponent],
   templateUrl: './app-capsule.component.html',
   styleUrl: './app-capsule.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
