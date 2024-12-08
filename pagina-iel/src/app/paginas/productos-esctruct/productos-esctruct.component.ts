@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { AppCapsuleComponent } from '../../estructura/app-capsule/app-capsule.component';
 
 
 
 @Component({
   selector: 'app-productos-esctruct',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, AppCapsuleComponent],
   templateUrl: './productos-esctruct.component.html',
   styleUrl: './productos-esctruct.component.css'
 })

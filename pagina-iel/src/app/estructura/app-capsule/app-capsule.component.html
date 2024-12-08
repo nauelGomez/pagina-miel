@@ -5,7 +5,7 @@
   </div>
   <div class="main-bar">
     <i>
-      <span class="brand" [routerLink]="['']">laPehuajo</span>
+      <span class="brand">laPehuajo</span>
       <ion-icon name="leaf-outline"></ion-icon>
     </i>
     <mat-form-field class="search-field" appearance="outline">
@@ -40,10 +40,10 @@
 
 <mat-toolbar color="primary" class="navbar">
   <div class="menu-items">
-    <button mat-button [routerLink]="['']">Inicio</button>
-    <button mat-button [routerLink]="['products-estruct']">Productos</button>
-    <button mat-button [routerLink]="['contacto-form']">Contacto</button>
-    <button mat-button [routerLink]="['quienes-somos']">Quiénes somos</button>
+    <button mat-button>Inicio</button>
+    <button mat-button routerLink="/productos-estruct">Productos</button>
+    <button mat-button>Contacto</button>
+    <button mat-button>Quiénes somos</button>
   </div>
 </mat-toolbar>
 
@@ -117,7 +117,7 @@
     <p class="subtotal-text">Subtotal (sin envío): {{ calculateTotal() | currency }}</p>
 
    
-    <a [routerLink]="['products-estruct']" class="link-to-products">Ver más productos</a>
+    <a href="" class="link-to-products">Ver más productos</a>
   </div>
 
   
