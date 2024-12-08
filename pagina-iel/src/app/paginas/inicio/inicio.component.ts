@@ -3,6 +3,7 @@ import { CarouselProductsComponent } from "../carousel-products/carousel-product
 import { CommonModule } from '@angular/common';
 
 
+
 @Component({
   selector: 'app-inicio',
   standalone: true,

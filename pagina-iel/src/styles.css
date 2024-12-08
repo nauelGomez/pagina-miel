@@ -20,6 +20,9 @@ body { margin: 0; }
   color: #73302e;
 }
 
+.p-carousel-content {
+  background-color: #faf0dd;
+}
 
   
   button.p-carousel-next,
