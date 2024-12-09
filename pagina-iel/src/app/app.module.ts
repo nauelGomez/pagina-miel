@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { CommonModule } from '@angular/common';
 		FormsModule,
 		BrowserAnimationsModule,
 		CommonModule],
-	providers: []
+	providers: [provideHttpClient()]
 })
 export class AppModule {
 }

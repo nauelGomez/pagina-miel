@@ -1,0 +1,24 @@
+<div class="product-card">
+    <!-- Título del producto -->
+    <h3>{{ productoInfo.title }}</h3>
+  
+    <!-- Imágenes del producto -->
+    <div class="product-card">
+          <img [src]="productoInfo.images[1]" (error)="onImageError($event)" />
+        <ng-template #noImages>
+          <p>No hay imágenes disponibles.</p>
+        </ng-template>
+      </div>
+      
+  
+    <!-- Marcador de posición si no hay imágenes -->
+    <ng-template #noImages>
+      <p>No hay imágenes disponibles para este producto.</p>
+    </ng-template>
+  
+    <p>Precio: ${{ productoInfo?.price }}</p>
+
+   
+  
+  </div>
+  

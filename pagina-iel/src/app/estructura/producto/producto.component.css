@@ -1,0 +1,250 @@
+/* Contenedor principal de las tarjetas de producto */
+.product-card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que las tarjetas pasen a la siguiente línea */
+  gap: 16px; /* Espaciado entre tarjetas */
+  justify-content: space-evenly; /* Distribuir tarjetas uniformemente */
+  padding: 20px;
+}
+
+/* Estilo individual de cada tarjeta */
+.product-card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  text-align: center;
+  margin: 10px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  max-width: 220px; /* Ancho máximo de cada tarjeta */
+  flex: 1 1 calc(25% - 32px); /* 4 tarjetas por fila, ajustable */
+  display: flex;
+  flex-direction: column; /* Alinear contenido en columna */
+  justify-content: space-between; /* Distribuir contenido verticalmente */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Efecto de zoom */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Estilo de las imágenes en las tarjetas */
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Bordes redondeados */
+  margin-bottom: 16px;
+  object-fit: cover; /* Ajuste de imagen */
+}
+
+/* Estilo del texto de la tarjeta */
+.product-card h3 {
+  font-size: 1.2rem;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: #666666;
+  margin-bottom: 16px;
+}
+
+/* Contenedor de los botones */
+.product-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Espaciado entre botones */
+  margin-top: 15px;
+}
+
+/* Botón "Ver" */
+.btn-ver {
+  background-color: #dcbb7e; /* Fondo dorado */
+  color: #73302e; /* Texto marrón oscuro */
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-ver:hover {
+  background-color: #73302e; /* Fondo marrón oscuro */
+  color: #ffffff; /* Texto blanco */
+  transform: scale(1.05); /* Efecto de zoom */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+}
+
+/* Botón "Agregar al carrito" */
+.btn-agregar {
+  background-color: #28a745; /* Fondo verde */
+  color: #ffffff; /* Texto blanco */
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-agregar:hover {
+  background-color: #218838; /* Fondo verde más oscuro */
+  transform: scale(1.05); /* Efecto de zoom */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+}
+
+/* Efecto activo (cuando se hace clic en los botones) */
+.btn-ver:active,
+.btn-agregar:active {
+  transform: scale(0.95); /* Reduce ligeramente el tamaño */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce la sombra */
+}
+
+/* Estilo para los íconos en los botones */
+.btn-ver mat-icon, .btn-agregar mat-icon {
+  font-size: 20px; /* Tamaño del ícono */
+  margin-right: 8px; /* Espaciado entre ícono y texto */
+}
+
+/* Estilo general de los botones (Material Design) */
+.mat-button, .mat-raised-button {
+  min-width: 150px; /* Ancho mínimo del botón */
+  height: 48px; /* Altura consistente */
+  display: flex;
+  align-items: center;
+  text-transform: none; /* Texto sin mayúsculas automáticas */
+}
+/* Contenedor principal de las tarjetas de producto */
+.product-card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que las tarjetas pasen a la siguiente línea */
+  gap: 16px; /* Espaciado entre tarjetas */
+  justify-content: space-evenly; /* Distribuir tarjetas uniformemente */
+  padding: 20px;
+}
+
+/* Estilo individual de cada tarjeta */
+.product-card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  text-align: center;
+  margin: 10px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  max-width: 220px; /* Ancho máximo de cada tarjeta */
+  flex: 1 1 calc(25% - 32px); /* 4 tarjetas por fila, ajustable */
+  display: flex;
+  flex-direction: column; /* Alinear contenido en columna */
+  justify-content: space-between; /* Distribuir contenido verticalmente */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Efecto de zoom */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Estilo de las imágenes en las tarjetas */
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Bordes redondeados */
+  margin-bottom: 16px;
+  object-fit: cover; /* Ajuste de imagen */
+}
+
+/* Estilo del texto de la tarjeta */
+.product-card h3 {
+  font-size: 1.2rem;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  color: #666666;
+  margin-bottom: 16px;
+}
+
+/* Contenedor de los botones */
+.product-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Espaciado entre botones */
+  margin-top: 15px;
+}
+
+/* Botón "Ver" */
+.btn-ver {
+  background-color: #dcbb7e; /* Fondo dorado */
+  color: #73302e; /* Texto marrón oscuro */
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-ver:hover {
+  background-color: #b18430; /* Fondo marrón oscuro */
+  color: #ffffff; /* Texto blanco */
+  transform: scale(1.05); /* Efecto de zoom */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+}
+
+/* Botón "Agregar al carrito" */
+.btn-agregar {
+  background-color: #dcbb7e; /* Fondo verde */
+  color: #73302e; /* Texto blanco */
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-agregar:hover {
+  background-color: #b18430; /* Fondo verde más oscuro */
+  transform: scale(1.05); /* Efecto de zoom */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+}
+
+/* Efecto activo (cuando se hace clic en los botones) */
+.btn-ver:active,
+.btn-agregar:active {
+  transform: scale(0.95); /* Reduce ligeramente el tamaño */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce la sombra */
+}
+
+/* Estilo para los íconos en los botones */
+.btn-ver mat-icon, .btn-agregar mat-icon {
+  font-size: 20px; /* Tamaño del ícono */
+  margin-right: 8px; /* Espaciado entre ícono y texto */
+}
+
+/* Estilo general de los botones (Material Design) */
+.mat-button, .mat-raised-button {
+  min-width: 150px; /* Ancho mínimo del botón */
+  height: 48px; /* Altura consistente */
+  display: flex;
+  align-items: center;
+  text-transform: none; /* Texto sin mayúsculas automáticas */
+}

@@ -1,48 +1,26 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AsyncPipe, CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AppCapsuleComponent } from '../../estructura/app-capsule/app-capsule.component';
+import { RouterLink } from '@angular/router';
 
 
 
 @Component({
   selector: 'app-productos-esctruct',
   standalone: true,
-  imports: [CommonModule, FormsModule, AppCapsuleComponent],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './productos-esctruct.component.html',
   styleUrl: './productos-esctruct.component.css'
 })
 export class ProductosEsctructComponent {
-  quantities = ['350gr', '500gr', '1kg'];
-  editions = ['Amante', 'Aventurero', 'Fan'];
-  sortOptions = ['Más Vendidos', 'Menor Precio', 'Mayor Precio'];
-  selectedSort = 'Más Vendidos';
+products: RootObject[] = [];
 
-  products = [
-    {
-      name: 'Mantequilla de Maní Clásica 350gr',
-      price: 4795,
-      image: 'assets/images/product1.jpg',
-      edition: 'Amante',
-      quantity: '350gr'
-    },
-    {
-      name: 'Mantequilla de Almendras Clásica 350gr',
-      price: 10500,
-      image: 'assets/images/product2.jpg',
-      edition: 'Aventurero',
-      quantity: '350gr'
-    },
-    // Agrega más productos según sea necesario
-  ];
+  constructor(private service: ProductService) {}
 
-  filteredProducts = [...this.products];
-
-  toggleFilter(filter: string) {
-    // Implementa lógica de filtrado
+  ngOnInit(): void{
+    this.service.getProductsList().subscribe((data) => {
+      this.products = data;
+    });
   }
-
-  addToCart(product: any) {
-    alert(`${product.name} agregado al carrito`);
-  }
+  
 }

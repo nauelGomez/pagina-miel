@@ -1,16 +1,26 @@
 import { Injectable } from '@angular/core';
-import { Product } from './product.interface';
-import { BehaviorSubject } from 'rxjs';
+import { Product, RootObject} from './product.interface';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+
+  constructor (private http: HttpClient) {}
+  //private readonly _http = inject(HttpClient);
   private cartItemsSubject = new BehaviorSubject<Product[]>([]);
   cartItems$ = this.cartItemsSubject.asObservable();
 
   private cartCountSubject = new BehaviorSubject<number>(0);
   cartCount$ = this.cartCountSubject.asObservable();
+
+  /*getAllProducts(){
+    return this._http.get('https://api.escuelajs.co/api/v1/products');
+  }*/
 
   addToCart(product: Product): void {
     const currentItems = this.cartItemsSubject.getValue();
@@ -26,6 +36,11 @@ export class ProductService {
 
   this.cartItemsSubject.next([...currentItems]);
   this.updateCartCount();
+  }
+
+  getProductsList(): Observable<RootObject[]>
+  {
+    return this.http.get<RootObject[]>(`https://api.escuelajs.co/api/v1/products?offset=0&limit=10`);
   }
 
   updateCartCount(): void {

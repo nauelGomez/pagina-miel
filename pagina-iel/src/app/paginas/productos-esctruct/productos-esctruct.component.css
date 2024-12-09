@@ -1,3 +1,4 @@
+/* Contenedor principal */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -24,37 +25,64 @@
   .products {
     width: 75%;
     float: right;
-  }
-  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 90px;
+  margin-bottom: 300px;
+}
+
+/* Lista de productos como grid */
+.product-list {
+  display: grid; /* Convertimos el contenedor en grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Distribuimos columnas flexibles */
+  gap: 20px; /* Espaciado entre las tarjetas */
+  width: 100%; /* Aseguramos que use todo el ancho disponible */
+}
+
+/* Tarjetas de producto */
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #fff;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Imagen dentro de cada tarjeta */
+.product-card img {
+  width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+/* Título del producto */
+.product-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Precio del producto */
+.product-card .price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ea6834;
+  margin-top: 10px;
+}
+
+/* Aseguramos el diseño responsivo */
+@media (max-width: 768px) {
+
   .product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduce el ancho mínimo */
   }
-  
-  .product-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  .badge {
-    background-color: green;
-    color: white;
-    padding: 5px;
-    font-size: 12px;
-    position: absolute;
-  }
-  
-  button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  
+}
