@@ -2,6 +2,8 @@ import { AsyncPipe, CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { ProductService } from '../../services/servicio productos/product.service';
+import { RootObject } from '../../services/servicio productos/product.interface';
 
 
 
